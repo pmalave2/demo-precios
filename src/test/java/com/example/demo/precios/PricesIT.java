@@ -17,6 +17,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
+import com.example.demo.precios.application.rest.PriceController;
+
 @ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc
@@ -34,9 +36,9 @@ class PricesIT {
       }
     };
 
-    mvc.perform(get("/prices").params(params).accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$.priceListValue", is(2.0)))
-        .andExpect(jsonPath("$.price", is(35.5)));
+    mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.priceListValue", is(2.0))).andExpect(jsonPath("$.price", is(35.5)));
   }
 
   @Test
@@ -49,9 +51,9 @@ class PricesIT {
       }
     };
 
-    mvc.perform(get("/prices").params(params).accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$.priceListValue", is(2.3)))
-        .andExpect(jsonPath("$.price", is(25.45)));
+    mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.priceListValue", is(2.3))).andExpect(jsonPath("$.price", is(25.45)));
   }
 
   @Test
@@ -64,9 +66,9 @@ class PricesIT {
       }
     };
 
-    mvc.perform(get("/prices").params(params).accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$.priceListValue", is(2.0)))
-        .andExpect(jsonPath("$.price", is(35.50)));
+    mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.priceListValue", is(2.0))).andExpect(jsonPath("$.price", is(35.50)));
   }
 
   @Test
@@ -79,9 +81,9 @@ class PricesIT {
       }
     };
 
-    mvc.perform(get("/prices").params(params).accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$.priceListValue", is(3.0)))
-        .andExpect(jsonPath("$.price", is(30.50)));
+    mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.priceListValue", is(3.0))).andExpect(jsonPath("$.price", is(30.50)));
   }
 
   @Test
@@ -94,8 +96,8 @@ class PricesIT {
       }
     };
 
-    mvc.perform(get("/prices").params(params).accept(MediaType.APPLICATION_JSON)).andDo(print()).andExpect(status().isOk())
-        .andExpect(content().contentType(MediaType.APPLICATION_JSON)).andExpect(jsonPath("$.priceListValue", is(3.5)))
-        .andExpect(jsonPath("$.price", is(38.95)));
+    mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
+        .andExpect(jsonPath("$.priceListValue", is(3.5))).andExpect(jsonPath("$.price", is(38.95)));
   }
 }

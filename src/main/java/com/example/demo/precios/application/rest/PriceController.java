@@ -14,8 +14,10 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @RestController
-@RequestMapping("prices")
+@RequestMapping(path = PriceController.ENDPOINT)
 public class PriceController {
+  public static final String ENDPOINT = "/prices";
+
   private PriceService priceService;
 
   @GetMapping
