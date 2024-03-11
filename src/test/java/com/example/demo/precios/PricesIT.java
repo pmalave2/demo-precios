@@ -100,4 +100,18 @@ class PricesIT {
         .andExpect(status().isOk()).andExpect(content().contentType(MediaType.APPLICATION_JSON))
         .andExpect(jsonPath("$.priceListValue", is(3.5))).andExpect(jsonPath("$.price", is(38.95)));
   }
+
+  @Test
+  void givenRequest_whenGetPriceFromBrandDontExists_thenReturnHttpCode404() throws Exception {
+    MultiValueMap<String, String> params = new LinkedMultiValueMap<>() {
+      {
+        add("date", "2020-06-16T21:00:00");
+        add("productId", "35455");
+        add("brandId", "2");
+      }
+    };
+
+    mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
+        .andExpect(status().isNotFound());
+  }
 }
