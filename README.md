@@ -12,7 +12,7 @@
 ```bash
 mvn clean package
 ```
-* build image from [Dockerfile](Dockerfile)
+* Build image from [Dockerfile](Dockerfile)
 ```bash
 docker build -t sampleapp:v1 .
 ```
