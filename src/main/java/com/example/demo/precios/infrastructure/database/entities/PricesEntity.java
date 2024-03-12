@@ -7,7 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,16 +23,12 @@ public class PricesEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;
+  private int brandId;
   private LocalDateTime startDate;
   private LocalDateTime endDate;
+  private int priceList;
   private int productId;
   private int priority;
   private double price;
   private String currency;
-
-  @ManyToOne
-  private BrandEntity brand;
-
-  @ManyToOne
-  private PriceListEntity priceList;
 }
