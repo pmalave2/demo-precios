@@ -28,8 +28,7 @@ mvn clean spring-boot:run
 ```
 <br />
 <br />
-The service will be receiving requests throw the endpoint http://localhost:8080/prices
-
-And you can use this [Useful Requests](req.http) to make calls to the endpoint.
-
-You can use [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) on [VSCode](https://code.visualstudio.com/), or [Postman](https://www.postman.com/).
+The service will be receiving requests throw the endpoint <a href="http://localhost:8080/prices">http://localhost:8080/prices</a>.
+<br />
+<br />
+And you can use this <a href="req.http">Useful Requests</a> to make calls to the endpoint using any REST client like <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">REST Client</a> on <a href="https://code.visualstudio.com/">VSCode</a>, <a href="https://www.postman.com/">Postman</a> or cURL.
