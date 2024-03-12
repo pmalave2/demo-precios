@@ -1,14 +1,10 @@
 package com.example.demo.precios.infrastructure.repositories;
 
-import static com.example.demo.precios.infrastructure.repositories.PricesSpecifications.byBrandId;
-import static com.example.demo.precios.infrastructure.repositories.PricesSpecifications.byDateRange;
-import static com.example.demo.precios.infrastructure.repositories.PricesSpecifications.byProductId;
+import static com.example.demo.precios.infrastructure.repositories.PricesSpecifications.where;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.precios.domain.Prices;
@@ -24,8 +20,7 @@ public class PricesAdapter implements PricesRead {
   private PricesMapper pricesMapper;
 
   @Override
-  public List<Prices> findBy(LocalDateTime date, int productId, int brandId) {
-    return pricesRepository.findAll(Specification.where(byBrandId(brandId)).and(byProductId(productId).and(byDateRange(date))))
-        .stream().map(pricesMapper::mapToDomain).collect(Collectors.toList());
+  public Optional<Prices> findBy(LocalDateTime date, int productId, int brandId) {
+    return pricesRepository.findOne(where(brandId, productId, date)).map(pricesMapper::mapToDomain).or(Optional::empty);
   }
 }
