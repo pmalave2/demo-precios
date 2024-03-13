@@ -4,7 +4,7 @@ WORKDIR /home/buildapp
 
 COPY . .
 
-RUN mvn clean package -DskipTests
+RUN mvn package -DskipTests
 
 FROM eclipse-temurin:21-jre-jammy
 

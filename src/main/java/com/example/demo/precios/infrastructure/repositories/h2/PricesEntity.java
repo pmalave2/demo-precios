@@ -1,4 +1,4 @@
-package com.example.demo.precios.infrastructure.database.entities;
+package com.example.demo.precios.infrastructure.repositories.h2;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

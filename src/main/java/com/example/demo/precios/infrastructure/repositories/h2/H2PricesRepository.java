@@ -1,6 +1,6 @@
-package com.example.demo.precios.infrastructure.repositories;
+package com.example.demo.precios.infrastructure.repositories.h2;
 
-import static com.example.demo.precios.infrastructure.repositories.PricesSpecifications.where;
+import static com.example.demo.precios.infrastructure.repositories.h2.H2PricesSpecifications.where;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.precios.domain.Prices;
 import com.example.demo.precios.domain.mapper.PricesMapper;
-import com.example.demo.precios.domain.repository.PricesRead;
+import com.example.demo.precios.domain.repository.PricesReadRepository;
 
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 @Service
-public class PricesAdapter implements PricesRead {
-  private PricesRepository pricesRepository;
+public class H2PricesRepository implements PricesReadRepository {
+  private SpringDataPricesRepository pricesRepository;
   private PricesMapper pricesMapper;
 
   @Override

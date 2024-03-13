@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.precios.application.response.PriceResponse;
+import com.example.demo.precios.application.response.ReadPriceResponse;
 import com.example.demo.precios.domain.service.PriceService;
 
 import lombok.AllArgsConstructor;
@@ -15,13 +15,13 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 @RestController
 @RequestMapping(path = PriceController.ENDPOINT)
-public class PriceController {
+public class PriceController implements PriceApi {
   public static final String ENDPOINT = "/prices";
 
   private PriceService priceService;
 
   @GetMapping
-  public PriceResponse getPrice(@RequestParam LocalDateTime date, @RequestParam int productId, @RequestParam int brandId) {
+  public ReadPriceResponse getPrice(@RequestParam LocalDateTime date, @RequestParam int productId, @RequestParam int brandId) {
     return priceService.findBy(date, productId, brandId);
   }
 }

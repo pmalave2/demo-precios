@@ -5,6 +5,6 @@ import java.util.Optional;
 
 import com.example.demo.precios.domain.Prices;
 
-public interface PricesRead {
+public interface PricesReadRepository {
   Optional<Prices> findBy(LocalDateTime date, int productId, int brandId);
 }
