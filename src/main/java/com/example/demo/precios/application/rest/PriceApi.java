@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public interface PriceApi {
   @Operation(summary = "Fetch a price", description = "fetch a price by date, product and brand")
   @ApiResponses(value = { @ApiResponse(responseCode = "200", description = "Successful operation"),
-      @ApiResponse(responseCode = "404", description = "Price Not Found", content = @Content) })
+      @ApiResponse(responseCode = "400", description = "Price Not Found", content = @Content) })
   ReadPriceResponse getPrice(@Parameter(description = "Application Date", example = "2020-06-14T10:00:00") LocalDateTime date,
       @Parameter(description = "Product ID", example = "35455") int productId,
       @Parameter(description = "Brand ID", example = "1") int brandId);

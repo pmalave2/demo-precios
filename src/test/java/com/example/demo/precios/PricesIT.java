@@ -64,6 +64,6 @@ class PricesIT {
     };
 
     mvc.perform(get(PriceController.ENDPOINT).params(params).accept(MediaType.APPLICATION_JSON)).andDo(print())
-        .andExpect(status().isNotFound());
+        .andExpect(status().isBadRequest());
   }
 }
