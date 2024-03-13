@@ -2,7 +2,7 @@
 
 ## Decisions about the Microservice
 
-* I followed a <a href="https://www.baeldung.com/hexagonal-architecture-ddd-spring">DDD</a> approach for the app software design. I decided this to have a better code structure and a clear separation for the business logic.
+* I followed a DDD (<a href="https://www.baeldung.com/hexagonal-architecture-ddd-spring">1</a>) (<a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice">2</a>) approach for the app software design. I decided this to have a better code structure and a clear separation for the business logic.
 * Java Criteria API is used to query data in a programmatic way.
 
 ## How to run
