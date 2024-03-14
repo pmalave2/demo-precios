@@ -7,7 +7,7 @@ import org.springframework.data.jpa.domain.Specification;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
-public class H2PricesSpecifications {
+public class PricesSpecifications {
 
   public static Specification<PricesEntity> where(int brandId, int productId, LocalDateTime date) {
     return (root, query, builder) -> {

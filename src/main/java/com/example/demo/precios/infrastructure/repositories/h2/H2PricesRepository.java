@@ -1,6 +1,6 @@
 package com.example.demo.precios.infrastructure.repositories.h2;
 
-import static com.example.demo.precios.infrastructure.repositories.h2.H2PricesSpecifications.where;
+import static com.example.demo.precios.infrastructure.repositories.h2.PricesSpecifications.where;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
