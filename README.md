@@ -1,14 +1,9 @@
 # Precios Demo
 
-## Decisions about the Microservice
-
-* I followed a DDD (<a href="https://www.baeldung.com/hexagonal-architecture-ddd-spring">1</a>) (<a href="https://learn.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice">2</a>) approach for the app software design. I decided this to have a better code structure and a clear separation for the business logic.
-* Java Criteria API is used to query data in a programmatic way.
-
-## How to run
+## First steps
 * Clone this repository with Git
+## How to run
 * Follow one of this ways:
-
 ##### Docker
 * Install Docker
 * Build image from [Dockerfile](Dockerfile)
@@ -29,9 +24,15 @@ mvn clean spring-boot:run
 The service will receive requests throw the endpoint <a href="http://localhost:8080/prices">http://localhost:8080/prices</a>.
 <br />
 <br />
-You can use this <a href="req.http">Useful Requests</a> to make calls to the endpoint using any REST client like:
+You can use this <a href="req.http">Useful Requests</a> to do calls to the endpoint using any REST client like:
 
 * <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client">REST Client</a> on <a href="https://code.visualstudio.com/">VSCode</a>
 * <a href="https://www.postman.com/">Postman</a>
 * cURL
-* Swagger, via URL http://localhost:8080/swagger-ui/
+* Swagger, via URL http://localhost:8080/swagger-ui.html
+## Run tests
+* Install [Java 21 JDK](https://adoptium.net/) and [Maven](https://maven.apache.org/download.cgi)
+* run:
+```bash
+mvn verify
+```

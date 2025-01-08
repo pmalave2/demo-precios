@@ -1,4 +1,4 @@
-INSERT INTO prices_entity
+INSERT INTO prices
   (id, brand_id, price, price_list, priority, product_id, end_date, start_date, currency)
 VALUES
   ('7197e222-9f2d-4010-b6b0-5ffd1b089296', 1, 35.50, 1, 0, 35455, '2020-12-31 23:59:59', '2020-06-14 00:00:00', 'EUR'),
