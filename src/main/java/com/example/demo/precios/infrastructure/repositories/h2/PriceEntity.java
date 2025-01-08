@@ -11,15 +11,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.FieldNameConstants;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@FieldNameConstants
-@Entity
-public class PricesEntity {
+@Entity(name = "prices")
+public class PriceEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)
   private UUID id;

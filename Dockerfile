@@ -1,4 +1,4 @@
-FROM maven:3.9-eclipse-temurin-21-jammy as build-step
+FROM maven:3-eclipse-temurin-21-jammy AS build-step
 
 WORKDIR /home/buildapp
 

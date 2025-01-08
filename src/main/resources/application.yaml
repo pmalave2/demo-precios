@@ -3,7 +3,6 @@ spring:
     url: jdbc:h2:mem:db;MODE=MSSQLServer;DATABASE_TO_UPPER=FALSE;CASE_INSENSITIVE_IDENTIFIERS=TRUE
     username: sa
     password:
-    driverClassName: org.h2.Driver
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -15,3 +14,6 @@ server:
   error:
     include-message: always
     include-stacktrace: on-param
+
+springdoc:
+  show-actuator: true
